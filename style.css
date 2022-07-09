@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&family=Oswald:wght@200;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FEFEFE;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+}
+
+img {
+    width: 100%;
+}
+
+/* .container {
+    display: grid;
+    row-gap: 30px;
+} */
+
+/* Navigation */
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px 0;
+    /* background-color: salmon; */
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between ;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-toggle input {
+    width: 40px;
+    height: 28px;
+    left: -8px;
+    top: -3px;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;  
+    background-color: #000 ;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Hamburger menu Animation */
+/* cari span yg ada di menu toggle yg dia tuh anak ke berapa*/
+.menu-toggle span:nth-child(2) {
+     /* untuk mengatur poros transfromnya, normalnya berada di tengah, jadi kita ubah porosnya ke kiri */
+     transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    /*ubah porosnya ke kanan */
+    transform-origin: 0 100%;
+}
+
+/* ketika input di cek cari sibling/saudaranya yg merupakan span ke dua  */
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+   transform: rotate(45deg) translate(-2px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, -2px);
+    background-color: white;
+ }
+
+ .menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+ }
+
+.menu .brand {
+    display: grid;
+    place-content: center;
+    color: #717274;
+    font-size: 0.8em;
+    padding: 5px 0;
+   
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 120px));
+}
+
+.menu ul li {
+    display: grid;
+    place-items: center;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.menu ul a {
+    text-decoration: none;
+    color: #717274;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows : 100vh;
+    padding: 10px;
+}
+
+header .header-text {
+    display: grid;
+    place-content: center;
+    row-gap: 30px;
+    font-family: 'League Gothic', sans-serif;
+    font-size: 1.2em;
+}
+
+.header-text h1 {
+    font-size: 4em;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.header-text h1 span {
+    color: rgb(88, 155, 78);
+}
+
+.header p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.header-text .btn a {
+    /* border: 1px solid black; */
+    padding: 15px 50px;
+    border-radius: 10px;
+    background-color: #FB8603;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+    transition: .35s;
+    font-family: 'Lato', sans-serif;;
+}
+
+.button {
+    max-width: 20%;
+    padding: 15px 50px;
+    border-radius: 10px;
+    background-color: #FB8603;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+    transition: .35s;
+    font-family: 'Lato', sans-serif;;
+}
+
+.button:hover{
+    background-color: black;
+    color: #589B4E;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.btn a:hover {
+    background-color: black;
+    color: #589B4E;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+}
+
+.header-text .btn .btn-how {
+    color: #717274;
+    background-color: #fff;
+    box-shadow: 0px 0px 0px black;
+}
+
+
+header .header-img {
+    background-image: url(img/bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services {
+    display: grid;
+    margin-bottom: 100px;
+    height: 100vh;
+}
+
+.service-heading {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.service-heading h1 {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 3.5em;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.service-heading h1 span {
+    color: #589B4E;
+}
+
+.service-heading p {
+    color: #717274;
+}
+
+.box-service {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    padding: 0 100px;
+}
+
+.box-service .service {
+    display: grid;
+    /* place-content: center; */
+    text-align: center;
+    padding: 15px;
+    /* box-shadow: 5px 5px 5px rgb(88, 155, 78),
+    -5px -5px 5px rgba(0, 0, 0, .5); */
+    box-shadow: 0px 3px 5px 1px rgba(88, 155, 78, .9);;
+    color: #333;
+    font-weight: 100;
+    border-radius: 20px;
+    transition: .5s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 5px 1px rgba(88, 155, 78, .9);
+}
+
+.service h4 {
+    margin-bottom: 10px;
+}
+
+/* Spices */
+.spices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100vh;
+    background-color: #FBF9FC;
+    /* margin-top: 250px; */
+    
+}
+
+.spices .spices-img {
+    background-image: url(img/bg-2.png);
+    background-size: cover;
+}
+
+.spices .spices-heading {
+    max-width: 70%;
+    display: grid;
+    padding: 20px;
+    align-content: center;
+}
+
+.spices-heading h2 {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 4em;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.spices-heading span, .food-menu span {
+    color: #589B4E;
+}
+
+.spices-heading p, .menu-heading p {
+    color: #aeaeae;
+    margin-bottom: 20px;
+}
+
+/* Food Menu */
+.food-menu {
+    margin-top: 50px;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+}
+
+.food-menu .menu-heading {
+    display: grid;
+    place-content: center;
+    max-width: 60%;
+    text-align: center;
+}
+
+.food-menu .menu-heading h2 {
+    font-family: 'League Gothic', sans-serif;
+    margin-bottom: 20px;
+    font-size: 4em;
+    font-weight: 200;
+}
+
+.food-menu .menu-2 {
+    display: grid;
+    max-width: 80%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* background-color: red; */
+    column-gap: 20px;
+    row-gap: 30px;
+}
+
+.food {
+    box-shadow: 1px 10px 5px rgba(204, 200, 200, 0.3), 1px 20px 5px rgba(204, 204, 204, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    height: auto;
+}
+
+.food h4 {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.food img {
+    width: 100%;
+}
+
+.food .food-img {
+    margin-bottom: 10px;
+}
+
+.food .price {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+}
+
+.food .price p {
+    font-size: 1em;
+}
+
+.food .price .btn-buy {
+    display: grid;
+    justify-content: end;
+    box-sizing: border-box;
+}
+
+.price .btn-buy a {
+    text-decoration: none;
+    border: 1px solid #FB8603;
+    padding: 3px 30px;
+    border-radius: 15px;
+    color: #F88603;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+.price .btn-buy a:hover {
+    background-color: #F88603;
+    color: #fff;
+}
+
+/* Review */
+.review {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #FAFAFA;
+    margin: 100px auto 0;
+    padding: 50px 0;
+}
+
+.review-title {
+    max-width: 60%;
+}
+
+.review-title p {
+    color: #aeaeae;
+    margin-top: 20px;
+}
+
+.review-title h2 {
+    font-family: 'League Gothic', sans-serif;
+    font-size: 4em;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.review-title h2 span {
+    color: #589B4E;
+}
+
+.review-text {
+    display: grid;
+    max-width: 60%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 30px 50px 1px rgba(0, 0, 0, 0.1);
+}
+
+.review-comment {
+    margin-bottom: 25px;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    text-align: center;
+    color: #c7c7c7;
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Breakpoint */
+
+@media screen and (max-width: 1024px) {
+    
+    .header {
+        grid-template-columns: 1fr;
+    }
+
+    .header-img {
+        display: none;
+    }
+
+    .spices {
+        grid-template-columns: 1fr;
+        place-items: center;
+        text-align: center;
+    }
+
+    .spices .spices-heading a {
+        margin: 0 auto;
+    }
+    .spices-img {
+        display: none;
+    }
+
+    .menu ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .services {
+        height: auto;
+    }
+
+    .box-service {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        max-width: 100%;
+        order: -1;
+        display: flex;
+        justify-content: end;
+        overflow-x: hidden;
+        margin-right: 20px;
+        align-items: flex-end;
+    }
+
+    .menu .brand {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu ul.slide {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .menu ul {
+        display: flex;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
+        background-color: black;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 1;
+        background-color: #000;
+        transform: translateY(-100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    .header {
+        grid-template-columns: 1fr;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .services {
+        height: auto;
+    }
+
+    .spices {
+        grid-template-columns: 1fr;
+    }
+
+    .spices .spices-heading {
+        max-width: 100%;
+        justify-items: center;
+        text-align: center;
+    }
+    .spices-img {
+        display: none;
+    }
+
+    .review {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+        text-align: center;
+    }
+    
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .header-text h1 {
+        font-size: 2.5em;
+    }
+
+    .service-heading h1 {
+        font-size: 2.5em;
+    }
+
+    .spices-heading h2 {
+        font-size: 2.5em;
+    }
+
+    .btn {
+        display: grid;
+    }
+
+    .btn {
+        justify-content: center;
+        align-content: center;
+    }
+
+    .services {
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+    .box-service {
+        grid-template-columns: 1fr;
+        padding: 0 30px;
+    }
+
+    .spices {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .spices .spices-heading {
+        max-width: 100%;
+    }
+
+    .spices-heading .button{
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .spices-img {
+        display: none;
+    }
+
+    .food-menu .menu-heading {
+        max-width: 100%;
+
+    }
+
+    .food-menu .menu-heading h2 {
+        font-size: 45px;
+    }
+
+    .food-menu .menu-2 {
+        max-width: 100%;
+    }
+
+    .review-title h2 {
+        font-size: 2.5em;
+    }
+
+}
